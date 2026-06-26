@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-const N8N_WEBHOOK = 'https://ahpnl-zoho-bot.app.n8n.cloud/webhook/nlp-registro'
+const N8N_WEBHOOK = 'https://n8nproduction.sistemashpnl.com/webhook/nlp-registro'
 
 export async function POST(request: NextRequest) {
   try {
