@@ -9,7 +9,7 @@ export default function Home() {
       <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">
 
         {/* Page title */}
-        <h1 className="font-dancing text-5xl md:text-6xl text-[#E8602C] mb-10 leading-tight">
+        <h1 className="font-dancing text-5xl md:text-6xl text-[#2563EB] mb-10 leading-tight">
           NLP MetaFest
         </h1>
 
@@ -26,7 +26,7 @@ export default function Home() {
         </div>
 
         {/* Section heading */}
-        <h2 className="font-dancing text-3xl md:text-4xl text-[#E8602C] mb-7 leading-snug">
+        <h2 className="font-dancing text-3xl md:text-4xl text-[#2563EB] mb-7 leading-snug">
           Continue the Transformation – A Free Resource from Fabian Tejada
         </h2>
 
