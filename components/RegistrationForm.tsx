@@ -53,7 +53,7 @@ export default function RegistrationForm() {
   }
 
   const inputClass =
-    'w-full border border-gray-300 px-4 py-3 text-gray-700 text-sm focus:outline-none focus:border-[#2563EB] transition-colors placeholder:text-gray-400'
+    'w-full border border-gray-300 px-4 py-3 text-gray-700 text-sm focus:outline-none focus:border-[#00BCD4] transition-colors placeholder:text-gray-400'
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-4">
@@ -92,7 +92,7 @@ export default function RegistrationForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="border border-[#2563EB] text-[#2563EB] px-8 py-3 text-sm tracking-wide hover:bg-[#2563EB] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="border border-[#00BCD4] text-[#00BCD4] px-8 py-3 text-sm tracking-wide hover:bg-[#00BCD4] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'loading' ? 'Sending…' : 'Get your FREE resource'}
       </button>

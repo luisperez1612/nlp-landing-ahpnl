@@ -48,13 +48,13 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0B1628] pt-12 pb-6">
+    <footer className="bg-[#1A1A2E] pt-12 pb-6">
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
 
           {/* Brand */}
           <div>
-            <h3 className="font-dancing text-3xl text-[#60A5FA] mb-3">Fabian Tejada</h3>
+            <h3 className="font-dancing text-3xl text-[#00BCD4] mb-3">Fabian Tejada</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               NLP trainer &amp; coach helping thousands of professionals reprogram their
               subconscious for automatic success.
@@ -63,7 +63,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-dancing text-2xl text-[#60A5FA] mb-4">Contact</h3>
+            <h3 className="font-dancing text-2xl text-[#00BCD4] mb-4">Contact</h3>
             <a
               href="https://wa.me/17869892454"
               target="_blank"
@@ -79,7 +79,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h3 className="font-dancing text-2xl text-[#60A5FA] mb-4">Follow on Social Media</h3>
+            <h3 className="font-dancing text-2xl text-[#00BCD4] mb-4">Follow on Social Media</h3>
             <div className="flex gap-4 flex-wrap">
               {SOCIAL_LINKS.map((s) => (
                 <a
