@@ -1,6 +1,6 @@
 import RegistrationForm from '@/components/RegistrationForm'
 import Footer from '@/components/Footer'
-import { BadgeSVG } from '@/components/BadgeSVG'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -13,9 +13,16 @@ export default function Home() {
           NLP MetaFest
         </h1>
 
-        {/* Badge */}
+        {/* Logo */}
         <div className="flex justify-center mb-10">
-          <BadgeSVG />
+          <Image
+            src="/logo.jpeg"
+            alt="NLP MetaFest – A Global Gathering of Excellence"
+            width={200}
+            height={200}
+            className="rounded-full"
+            priority
+          />
         </div>
 
         {/* Section heading */}

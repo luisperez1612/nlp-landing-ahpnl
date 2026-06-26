@@ -3,6 +3,30 @@ import { Resend } from 'resend'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
+async function saveToGoogleSheets(data: {
+  firstName: string
+  lastName: string
+  email: string
+}) {
+  const sheetUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL
+  if (!sheetUrl) return
+
+  try {
+    await fetch(sheetUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        date: new Date().toLocaleString('es-US', { timeZone: 'America/New_York' }),
+      }),
+    })
+  } catch (err) {
+    console.error('[sheets] Failed to save:', err)
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
@@ -19,6 +43,9 @@ export async function POST(request: NextRequest) {
     if (!EMAIL_REGEX.test(email)) {
       return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })
     }
+
+    // Save to Google Sheets (runs in background, doesn't block response)
+    saveToGoogleSheets({ firstName: firstName.trim(), lastName: lastName.trim(), email: email.trim() })
 
     if (!process.env.RESEND_API_KEY) {
       console.warn('[subscribe] RESEND_API_KEY not set – skipping email send.')
@@ -121,7 +148,7 @@ export async function POST(request: NextRequest) {
 </html>`,
     })
 
-    // Optionally notify yourself of new sign-ups
+    // Notify yourself of new sign-ups
     if (notifyEmail) {
       await resend.emails.send({
         from: fromEmail,
