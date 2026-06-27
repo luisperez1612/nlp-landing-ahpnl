@@ -56,8 +56,7 @@ export default function Footer() {
           <div>
             <h3 className="font-dancing text-3xl text-[#00BCD4] mb-3">Fabian Tejada</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              NLP trainer &amp; coach helping thousands of professionals reprogram their
-              subconscious for automatic success.
+              NLP and Hipnosis Master Trainer, Master Coach &amp; Author of 3 bestselling books in the field of NLP.
             </p>
           </div>
 
